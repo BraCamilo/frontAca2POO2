@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio 2 - Deshacer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <h1 class="brand">Ejercicio 2: Sistema de deshacer acciones</h1>
+      <a class="nav-link" href="index.html">Volver al inicio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>Pila LIFO</h2>
+      <p>La ultima accion registrada queda encima de la pila y es la primera que se elimina al usar Deshacer.</p>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h3>Registrar accion</h3>
+        <form id="actionForm">
+          <label>Tipo
+            <select name="tipo" required>
+              <option>Escribir texto</option>
+              <option>Borrar texto</option>
+              <option>Copiar contenido</option>
+              <option>Pegar contenido</option>
+            </select>
+          </label>
+          <label>Descripcion <input name="descripcion" required></label>
+          <div class="actions">
+            <button type="submit">Registrar</button>
+            <button type="button" id="undoButton" class="danger">Deshacer</button>
+          </div>
+        </form>
+        <p id="message" class="message"></p>
+      </div>
+
+      <div class="panel">
+        <h3>Pila de acciones</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Posicion</th>
+                <th>Tipo</th>
+                <th>Descripcion</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="actionsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Analisis</h3>
+      <ul class="analysis-list">
+        <li>La pila es ideal porque aplica LIFO: ultimo en entrar, primero en salir.</li>
+        <li>Si se usara una cola, se desharia primero la accion mas antigua y el editor se comportaria incorrectamente.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ejercicio2.js"></script>
+</body>
+</html>

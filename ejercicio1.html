@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio 1 - Estudiantes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <h1 class="brand">Ejercicio 1: Gestion de estudiantes inscritos</h1>
+      <a class="nav-link" href="index.html">Volver al inicio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>Lista dinamica</h2>
+      <p>La lista conserva el orden de inscripcion y permite registros repetidos, tal como plantea el caso de estudio.</p>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h3>Registrar estudiante</h3>
+        <form id="studentForm">
+          <label>Nombre <input name="nombre" required></label>
+          <label>Correo <input name="correo" type="email"></label>
+          <label>Curso <input name="curso" value="Programacion OO2"></label>
+          <button type="submit">Agregar</button>
+        </form>
+        <hr>
+        <form id="searchForm">
+          <label>Buscar por nombre <input name="nombre" required></label>
+          <div class="actions">
+            <button type="submit" class="secondary">Buscar</button>
+            <button type="button" id="clearSearch" class="secondary">Ver todos</button>
+          </div>
+        </form>
+        <p id="message" class="message"></p>
+      </div>
+
+      <div class="panel">
+        <h3>Estudiantes en orden de inscripcion</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Orden</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Curso</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody id="studentsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Analisis</h3>
+      <ul class="analysis-list">
+        <li>Una lista es mas adecuada que un arreglo porque puede crecer sin definir un tamano fijo.</li>
+        <li>La lista dinamica facilita agregar y eliminar estudiantes durante la ejecucion.</li>
+        <li>Se permiten repetidos porque el problema indica que un estudiante puede registrarse varias veces por error.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ejercicio1.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio 3 - Clientes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <h1 class="brand">Ejercicio 3: Atencion de clientes en banco</h1>
+      <a class="nav-link" href="index.html">Volver al inicio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>Cola de atencion</h2>
+      <p>Los clientes se atienden por orden de llegada, con prioridad para clientes preferenciales como extension del punto.</p>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h3>Registrar cliente</h3>
+        <form id="clientForm">
+          <label>Nombre <input name="nombre" required></label>
+          <label>Documento <input name="documento"></label>
+          <label><span>Preferencial</span>
+            <select name="preferencial">
+              <option value="false">No</option>
+              <option value="true">Si</option>
+            </select>
+          </label>
+          <div class="actions">
+            <button type="submit">Agregar a cola</button>
+            <button type="button" id="serveButton" class="secondary">Atender siguiente</button>
+          </div>
+        </form>
+        <p id="message" class="message"></p>
+      </div>
+
+      <div class="panel">
+        <h3>Clientes</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Orden</th>
+                <th>Nombre</th>
+                <th>Documento</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="clientsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Analisis</h3>
+      <ul class="analysis-list">
+        <li>La cola utiliza FIFO: primero en entrar, primero en salir.</li>
+        <li>Una pila seria incorrecta porque atenderia primero a quien llego de ultimo.</li>
+        <li>Cuando la cola queda vacia, el sistema informa que no hay clientes pendientes.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ejercicio3.js"></script>
+</body>
+</html>

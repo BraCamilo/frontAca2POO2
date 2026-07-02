@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio 4 - Participantes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <h1 class="brand">Ejercicio 4: Control de acceso a evento</h1>
+      <a class="nav-link" href="index.html">Volver al inicio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>Conjunto sin duplicados</h2>
+      <p>El correo funciona como identificador unico para evitar participantes repetidos en la conferencia.</p>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h3>Registrar participante</h3>
+        <form id="participantForm">
+          <label>Nombre <input name="nombre" required></label>
+          <label>Correo <input name="correo" type="email" required></label>
+          <label>Empresa <input name="empresa"></label>
+          <button type="submit">Registrar</button>
+        </form>
+        <p id="message" class="message"></p>
+      </div>
+
+      <div class="panel">
+        <h3>Lista final de participantes</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Empresa</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody id="participantsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Analisis</h3>
+      <ul class="analysis-list">
+        <li>Un conjunto evita duplicados automaticamente usando una clave unica.</li>
+        <li>Frente a una lista, reduce errores cuando solo debe existir un registro por participante.</li>
+        <li>Tambien se usa en control de asistencia, inventarios unicos y validacion de correos registrados.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ejercicio4.js"></script>
+</body>
+</html>
