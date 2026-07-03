@@ -1,4 +1,7 @@
 const DEFAULT_API_URL = "https://backaca2poo2-production.up.railway.app/api";
+//Url producción: https://backaca2poo2-production.up.railway.app/api
+//UrL local: http://localhost:8080/api
+//Desplegar localmente: docker run -d --rm --name programacionOO2-api-test -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/estructuras -e SPRING_DATASOURCE_USERNAME=poo2admin -e SPRING_DATASOURCE_PASSWORD=poo2123 por-back:latest
 
 function getApiUrl() {
   return localStorage.getItem("apiUrl") || DEFAULT_API_URL;
